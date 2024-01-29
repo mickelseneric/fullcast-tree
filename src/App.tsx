@@ -1,25 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
+import { TreeProvider } from "./context/TreeContext";
+import { TreeView } from "./components/Tree";
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <TreeProvider>
+      <div className="App">
+        <h1>Tree View</h1>
+        <div className="view">
+          <div className="treeView">
+            <TreeView />
+          </div>
+          <div className="details"></div>
+        </div>
+      </div>
+    </TreeProvider>
   );
 }
 
